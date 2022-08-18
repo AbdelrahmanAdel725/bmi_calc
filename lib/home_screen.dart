@@ -6,21 +6,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:untitled/result_screen.dart';
 
-class HomeScreen extends StatefulWidget
-{
+class HomeScreen extends StatefulWidget {
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-
   bool isMale = true;
   int height = 160;
   int weight = 60;
   int age = 20;
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       backgroundColor: Colors.grey[200],
       appBar: AppBar(
@@ -47,7 +44,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   children: [
                     Expanded(
                       child: GestureDetector(
-                        onTap: (){
+                        onTap: () {
                           setState(() {
                             isMale = true;
                           });
@@ -77,10 +74,11 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                     Expanded(
                       child: GestureDetector(
-                        onTap: (){
+                        onTap: () {
                           setState(() {
                             isMale = false;
-                          });;
+                          });
+                          ;
                         },
                         child: Container(
                           color: isMale ? Colors.white : Colors.teal[100],
@@ -158,7 +156,6 @@ class _HomeScreenState extends State<HomeScreen> {
                       onChanged: (value) {
                         setState(() {
                           height = value.round();
-
                         });
                       },
                     ),
@@ -208,7 +205,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               children: [
                                 FloatingActionButton(
                                   heroTag: 'weight-',
-                                  onPressed: (){
+                                  onPressed: () {
                                     setState(() {
                                       weight--;
                                     });
@@ -223,7 +220,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 ),
                                 FloatingActionButton(
                                   heroTag: 'weight+',
-                                  onPressed: (){
+                                  onPressed: () {
                                     setState(() {
                                       weight++;
                                     });
@@ -277,7 +274,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               children: [
                                 FloatingActionButton(
                                   heroTag: 'age-',
-                                  onPressed: (){
+                                  onPressed: () {
                                     setState(() {
                                       age--;
                                     });
@@ -292,7 +289,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 ),
                                 FloatingActionButton(
                                   heroTag: 'age+',
-                                  onPressed: (){
+                                  onPressed: () {
                                     setState(() {
                                       age++;
                                     });
@@ -319,15 +316,18 @@ class _HomeScreenState extends State<HomeScreen> {
             height: 40.0,
             child: TextButton(
               onPressed: () {
-                int result = (weight / pow ( height / 100,2)).round();
+                int result = (weight / pow(height / 100, 2)).round();
                 print(result);
-                Navigator.push(context, MaterialPageRoute(builder: (context) => ResultScreen(
-                  result: result,
-                  age: age,
-                  isMale: isMale,
-                  height: height,
-                  weight: weight,
-                )));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => ResultScreen(
+                              result: result,
+                              age: age,
+                              isMale: isMale,
+                              height: height,
+                              weight: weight,
+                            )));
               },
               child: Text(
                 'CALCULATE',

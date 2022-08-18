@@ -19,81 +19,130 @@ class ResultScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.teal,
-        title: Text(
-            'BMI RESULT'
-        ),
+        title: Text('BMI RESULT'),
       ),
       body: Padding(
-        padding: const EdgeInsets.only(top: 15.0),
+        padding: const EdgeInsets.only(top: 8.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children:
-          [
+          children: [
             Text(
               'BMI Categories:',
               style: TextStyle(
-                fontSize: 40,
+                fontSize: 25,
                 fontWeight: FontWeight.bold,
-              ),),
+              ),
+            ),
             Text(
               'Underweight = <18.5',
               style: TextStyle(
-                fontSize: 25,
-              ),),
+                fontSize: 20,
+              ),
+            ),
             Text(
               'Normal weight = 18.5–24.9',
               style: TextStyle(
-                fontSize: 25,
-              ),),
+                fontSize: 20,
+              ),
+            ),
             Text(
               'Overweight = 25–29.9',
               style: TextStyle(
-                fontSize: 25,
-              ),),
+                fontSize: 20,
+              ),
+            ),
             Text(
               'Obesity = 30 or greater',
               style: TextStyle(
-                fontSize: 25,
-              ),),
-            SizedBox(height: 200,),
+                fontSize: 20,
+              ),
+            ),
+            SizedBox(
+              height: 200,
+            ),
             Center(
               child: Column(
-                children:
-                [
-                  Text(
-                    'Gender: ${isMale ? 'Male' : 'Female'}',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 25,
-                    ),
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        'Gender: ',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 25,
+                        ),
+                      ),
+                      Text(
+                        '${isMale ? 'Male' : 'Female'}',
+                        style: TextStyle(
+                          fontSize: 25,
+                        ),
+                      ),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        'Age: ',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 25,
+                        ),
+                      ),
+                      Text(
+                        '$age',
+                        style: TextStyle(
+                          fontSize: 25,
+                        ),
+                      ),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        'Height: ',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 25,
+                        ),
+                      ),
+                      Text(
+                        '$height',
+                        style: TextStyle(
+                          fontSize: 25,
+                        ),
+                      ),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        'Weight: ',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 25,
+                        ),
+                      ),
+                      Text(
+                        '$weight',
+                        style: TextStyle(
+                          fontSize: 25,
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 10,
                   ),
                   Text(
-                    'Age: $age',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 25,
-                    ),
-                  ),
-                  Text(
-                    'Height: $height',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 25,
-                    ),
-                  ),
-                  Text(
-                    'Weight: $weight',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 25,
-                    ),
-                  ),
-                  SizedBox(height: 10,),
-                  Text(
-                    'Result: $result',
+                    'Result: ($result)',
                     style: TextStyle(
                       fontWeight: FontWeight.w900,
-                      fontSize: 40,
+                      fontSize: 30,
                     ),
                   ),
                 ],
@@ -104,4 +153,5 @@ class ResultScreen extends StatelessWidget {
       ),
     );
   }
+  // ${isMale ? 'Male' : 'Female'}
 }
